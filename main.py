@@ -1,7 +1,6 @@
 from comparacao import comparar_algoritmos, mostrar_historico
 
 if __name__ == "__main__":
-    # Altere a sequencia e a quantidade de quadros para testar outros casos.
     referencias = [
         2, 1, 5, 4, 4, 3, 2, 9, 2, 10,
         7, 1, 1, 2, 4, 4, 9, 10, 1, 9,
