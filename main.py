@@ -1,4 +1,4 @@
-from comparacao import comparar_algoritmos, mostrar_historico
+from comparacao import comparar_algoritmos, mostrar_todos_historicos
 
 if __name__ == "__main__":
     referencias = [1, 2, 3, 1, 4, 2, 5, 1, 2, 3, 4, 5]
@@ -10,6 +10,5 @@ if __name__ == "__main__":
         tau=4
     )
 
-    # Mostra o passo a passo do LRU.
-    resultado_lru = next(r for r in resultados if r.algoritmo == "LRU")
-    mostrar_historico(resultado_lru)
+    # Mostra o passo a passo (tabela) de todos os algoritmos.
+    mostrar_todos_historicos(resultados)
