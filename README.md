@@ -24,6 +24,24 @@ Abra o terminal na pasta do projeto e execute:
 
 Nao e necessario instalar bibliotecas externas.
 
+`main.py` mostra a comparacao e a tabela passo a passo de TODOS os algoritmos.
+
+## Teste grande (mais de 300 referencias, com semente)
+
+    python teste_grande.py
+
+Gera 400 referencias aleatorias com semente fixa (padrao 42): a mesma semente
+produz sempre a mesma sequencia e os mesmos resultados. Opcoes:
+
+    python teste_grande.py --semente 7            # outra sequencia
+    python teste_grande.py --n 1000               # mais referencias
+    python teste_grande.py --modo localidade      # acessos com localidade
+    python teste_grande.py --paginas 30 --quadros 6 --tau 10
+    python teste_grande.py --tabelas              # imprime tabelas no terminal
+
+As tabelas passo a passo de todos os algoritmos sao salvas em
+`saida_teste_grande_semente<N>.txt`.
+
 ## Como testar um algoritmo individual
 
 Por exemplo:
