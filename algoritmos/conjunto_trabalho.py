@@ -11,8 +11,8 @@ def simular_working_set(referencias, quantidade_quadros, tau=4):
     faltas = acertos = 0
     historico = []
 
-    for tempo, (pagina, escrita) in enumerate(refs):
-        falta = pagina not in quadros
+    for tempo, (pagina, escrita) in enumerate(refs):    #percorre referencias e registra tempo do acesso
+        falta = pagina not in quadros                   #verifica se pagina ta na memoria 
         if not falta:
             acertos += 1
         else:
@@ -22,7 +22,7 @@ def simular_working_set(referencias, quantidade_quadros, tau=4):
             else:
                 antigas = [p for p in quadros if tempo - ultimo_uso[p] >= tau]
                 candidatos = antigas if antigas else quadros
-                vitima = min(candidatos, key=lambda p: ultimo_uso[p])
+                vitima = min(candidatos, key=lambda p: ultimo_uso[p])       #ve a pagina com tau mais perto do valor e exclui
                 quadros[quadros.index(vitima)] = pagina
                 del ultimo_uso[vitima]
         ultimo_uso[pagina] = tempo
