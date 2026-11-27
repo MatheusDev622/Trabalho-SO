@@ -10,18 +10,18 @@ def simular_clock(referencias, quantidade_quadros):
 
     for pagina, escrita in refs:
         if pagina in quadros:
-            acertos += 1
+            acertos += 1                        # se tiver na memoria registra acerto e bit 1
             bit_r[quadros.index(pagina)] = 1
             falta = False
         else:
-            faltas += 1
+            faltas += 1                         #se nn tiver na memoria registra falta de pagina
             falta = True
             while quadros[ponteiro] is not None and bit_r[ponteiro] == 1:
                 bit_r[ponteiro] = 0
-                ponteiro = (ponteiro + 1) % quantidade_quadros
+                ponteiro = (ponteiro + 1) % quantidade_quadros        #enquanto encontrar pags de bit 1, zero o bit e passa pro prox quadro
             quadros[ponteiro] = pagina
             bit_r[ponteiro] = 1
-            ponteiro = (ponteiro + 1) % quantidade_quadros
+            ponteiro = (ponteiro + 1) % quantidade_quadros            #quando encontra quadro vazio ou bit 0 substitui e avança ponteiro
         historico.append((pagina, [p for p in quadros], falta))
     return finalizar("Relogio (Clock)", faltas, acertos, historico)
 
